@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://allinoneradar.com
+
+# Sitemaps
+Sitemap: https://allinoneradar.com/sitemap.xml
