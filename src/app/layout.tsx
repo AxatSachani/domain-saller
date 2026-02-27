@@ -1,7 +1,14 @@
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { generateMetadata as getMetadata } from "@/lib/seo";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 export const metadata: Metadata = getMetadata();
 
@@ -11,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={inter.variable}>
       <head>
         <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -22,7 +29,7 @@ export default function RootLayout({
         <link rel="canonical" href={process.env.NEXT_PUBLIC_SITE_URL} />
         <Script src={`https://www.google.com/recaptcha/enterprise.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`} strategy="lazyOnload" />
       </head>
-      <body className="antialiased">
+      <body className={`${inter.className} antialiased bg-[#050510] text-slate-200`}>
         {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID && (
           <>
             <Script
@@ -44,4 +51,3 @@ export default function RootLayout({
     </html>
   );
 }
-

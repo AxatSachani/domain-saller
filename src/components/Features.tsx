@@ -29,24 +29,44 @@ const features: Feature[] = [
   },
 ];
 
+const delayClasses = [
+  'animate-fade-in-up-delay-1',
+  'animate-fade-in-up-delay-2',
+  'animate-fade-in-up-delay-3',
+  'animate-fade-in-up-delay-4',
+];
+
 export default function Features() {
   return (
-    <section id="details" className="py-20 px-4 bg-gray-50">
+    <section id="details" className="py-24 px-4 bg-[#050510] relative">
+      {/* Subtle gradient accent */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[1px] bg-gradient-to-r from-transparent via-purple-500/30 to-transparent" />
+
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">
-          Why This Domain?
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+            <span className="text-gradient">Why This Domain?</span>
+          </h2>
+          <p className="text-slate-400 text-lg max-w-xl mx-auto">
+            Everything you need for a powerful online presence
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow text-center"
+              className={`group glass rounded-2xl p-8 hover:bg-white/[0.06] transition-all duration-500 hover:-translate-y-1 glow-border ${delayClasses[index]}`}
             >
-              <div className="text-5xl mb-4">{feature.icon}</div>
-              <h3 className="text-xl font-semibold mb-3 text-gray-900">
+              <div className="w-14 h-14 rounded-xl bg-purple-500/10 flex items-center justify-center text-3xl mb-6 group-hover:bg-purple-500/20 transition-colors duration-300">
+                {feature.icon}
+              </div>
+              <h3 className="text-lg font-semibold mb-3 text-white group-hover:text-gradient-subtle transition-colors duration-300">
                 {feature.title}
               </h3>
-              <p className="text-gray-600">{feature.description}</p>
+              <p className="text-slate-400 text-sm leading-relaxed">
+                {feature.description}
+              </p>
             </div>
           ))}
         </div>
@@ -54,4 +74,3 @@ export default function Features() {
     </section>
   );
 }
-
