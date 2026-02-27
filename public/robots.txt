@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://zanzea.com
+Host: https://allinoneradar.com
 
 # Sitemaps
-Sitemap: https://zanzea.com/sitemap.xml
+Sitemap: https://allinoneradar.com/sitemap.xml
