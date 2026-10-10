@@ -96,8 +96,3 @@ The contact form includes Google reCAPTCHA v2 for spam protection:
 - Twitter Card tags
 - Search engine verification (Google, Yandex, Yahoo)
 - Canonical URLs
-
-## License
-
-MIT
-
